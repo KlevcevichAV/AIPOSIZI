@@ -23,15 +23,15 @@ class UpdateGame extends Component{
     }
 
     onSubmit = (event) => {
-        let {game, price, description, date} = this.state;
+        let {name, price, description, date} = this.state;
         event.preventDefault();
-        if(game === '', price === '', description === '', date === ''){
+        if(name === '', price === '', description === '', date === ''){
             alert("Enter all Fields");
         }
         else{
             axios.post(`http://localhost:8082/games/update/` + this.props.match.params.id, JSON.stringify({
                 'id': this.props.match.params.id,
-                'name': game,
+                'name': name,
                 'price': price,
                 'description': description,
                 'date': date,
@@ -52,12 +52,12 @@ class UpdateGame extends Component{
     }
 
     render() {
-        let {game, price, description, date} = this.state;
+        let {name, price, description, date} = this.state;
         return(
             <main role="main" className="container">
                 <div>
                         <form onSubmit={this.onSubmit}>
-                            <TextField id="name" type="text" value={game} placeholder={"Enter new Name"} onChange={this.onChange}/><br/>
+                            <TextField id="name" type="text" value={name} placeholder={"Enter new Name"} onChange={this.onChange}/><br/>
                             <TextField id="price" type="text" value={price} placeholder={"Enter new Price"} onChange={this.onChange}/><br/>
                             <TextField id="description" type="text" value={description} placeholder={"Enter new Description"} onChange={this.onChange}/><br/>
                             <TextField id="date" type="text" value={date} placeholder={"Enter new Date"} onChange={this.onChange}/><br/>
