@@ -8,11 +8,11 @@
         <version>2.1.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ru.geekbrains</groupId>
-    <artifactId>geek-todolist</artifactId>
+    <groupId>com.iit</groupId>
+    <artifactId>ad</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>geek-todolist</name>
-    <description>Todo list project for Spring Boot</description>
+    <name>ad</name>
+    <description>shop</description>
 
     <properties>
         <java.version>1.8</java.version>

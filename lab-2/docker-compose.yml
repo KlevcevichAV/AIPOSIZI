@@ -3,16 +3,22 @@ version: '3.1'
 services:
 
   db:
+    container_name: workaround-postgres
     image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: example
       POSTGRES_DB: todo_app_db
     ports:
-      - 5432:5432
+      - 5433:5432
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8083:8080
+
+  app:
+    image: backend
+    ports:
+      - 8666:8082
