@@ -21,4 +21,4 @@ services:
   app:
     image: backend
     ports:
-      - 8666:8082
+      - 8082:8082
