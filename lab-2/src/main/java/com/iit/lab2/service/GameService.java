@@ -106,6 +106,8 @@ public class GameService {
             if (!item.getName().equals(game.getName())) {
                 if (gameRepository.findByName(game.getName()).isPresent()) {
                     throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Name is busy", "name");
+                } else {
+                    item.setName(game.getName());
                 }
             }
         } else {

@@ -58,7 +58,7 @@ class UpdateUser extends Component{
                     <form onSubmit={this.onSubmit}>
                         <Input id="email" type="text" value={email} placeholder={"Email"} onChange={this.onChange}/><br/>
                         <Input id="username" type="text" value={username} placeholder={"User Name"} onChange={this.onChange}/><br/>
-                        <Input id="password" type="text" value={password} placeholder={"Password"} onChange={this.onChange}/><br/>
+                        <Input id="password" type="password" value={password} placeholder={"Password"} onChange={this.onChange}/><br/>
                         <br/>
                         <Button onClick={this.onSubmit} variant="contained" color="primary">Update</Button><br/>
                         <br/><Button component={Link} to="/Users" variant="contained" color="primary">User's Table</Button>

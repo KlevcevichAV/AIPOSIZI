@@ -45,7 +45,7 @@ class UpdateReview extends Component{
     componentDidMount() {
         console.log(this.props);
         axios.get(`http://localhost:8082/reviews/update/`+this.props.match.params.id)
-            .then((response) => {this.setState({author: response.data.data.author, game: response.data.data.game, review: response.data.data.review});})
+            .then((response) => {this.setState({author: response.data.data.author.username, game: response.data.data.game.name, review: response.data.data.review});})
             .catch((error) => {console.log(error); this.setState({ message: error.message })});
     }
 

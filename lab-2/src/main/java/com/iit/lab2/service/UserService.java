@@ -48,7 +48,9 @@ public class UserService {
             throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Email is busy", "email");
         }
         userRepository.save(user);
-        uploadMainImage(user.getId(), userRequest.getLinkImage());
+        if (Objects.nonNull(userRequest.getLinkImage())) {
+            uploadMainImage(user.getId(), userRequest.getLinkImage());
+        }
         log.info("{} was created", user.getUsername());
     }
 
