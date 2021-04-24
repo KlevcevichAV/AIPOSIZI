@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+*.gz
+/node_modules/
+app.log

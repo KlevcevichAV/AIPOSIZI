@@ -1,7 +1,11 @@
 package com.iit.lab2.persist.entity;
 
+import com.iit.lab2.persist.request.UserRequest;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
+import java.util.Optional;
 
 @Entity
 @Table(name = "users")
@@ -20,8 +24,10 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private LocalDate date;
+
+    private String linkImage;
 
     public User() {
     }
@@ -64,5 +70,23 @@ public class User {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Optional<String> getLinkImage() {
+        if (Objects.nonNull(linkImage)) {
+            return Optional.of(linkImage);
+        }
+        return Optional.empty();
+    }
+
+    public void setLinkImage(String linkImage) {
+        this.linkImage = linkImage;
+    }
+
+    public void copyAttribute(UserRequest user) {
+        this.email = user.getEmail();
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.date = user.getDate();
     }
 }

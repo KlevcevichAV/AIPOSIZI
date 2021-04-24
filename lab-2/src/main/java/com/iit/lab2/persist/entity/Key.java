@@ -1,5 +1,6 @@
 package com.iit.lab2.persist.entity;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +12,9 @@ public class Key {
     @Column(unique = true, nullable = false)
     private String key;
     @ManyToOne
-    @JoinColumn(nullable=false)
+    @JoinColumn(nullable = false)
     private Game game;
+
     public Key() {
     }
 
