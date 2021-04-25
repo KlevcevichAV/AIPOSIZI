@@ -12,7 +12,7 @@ import UpdateGame from "./update_components/UpdateGame";
 import UpdateKey from "./update_components/UpdateKey";
 import UpdateReview from "./update_components/UpdateReview";
 import UpdateUser from "./update_components/UpdateUser";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Link, Route} from "react-router-dom";
 import MenuPopupState from "./MenuPopupState";
 import Games from "./components/Games";
 import Users from "./components/Users";
@@ -20,14 +20,29 @@ import Keys from "./components/Keys";
 import Review from "./components/Review";
 import Image from "./create_components/Image"
 import ImageUser from "./create_components/ImageUser"
+import {Button} from "@material-ui/core";
+import Registration from "./components/Registration";
+import Login from "./components/Login";
 
 
 class App extends Component{
     render() {
         return (
             <BrowserRouter>
-                    <MenuPopupState/>
+                <header className="topnav">
+                    <div>
+                        <MenuPopupState/>
+                    </div>
+                    <div>
+                        <Button component={Link} to="/Registration" style={{color: 'white'}}>SignUp</Button>
+                    </div>
+                    <div>
+                        <Button component={Link} to="/Login" style={{color: 'white'}}>Login</Button>
+                    </div>
+                </header>
                 <div className="App">
+                    <Route exact path='/Login' component={Login}/>
+                    <Route exact path='/Registration' component={Registration}/>
                     <Route exact path='/Users' component={Users}/>
                     <Route exact path='/ImageUser' component={ImageUser}/>
                     <Route exact path='/CreateUser' component={CreateUser}/>
