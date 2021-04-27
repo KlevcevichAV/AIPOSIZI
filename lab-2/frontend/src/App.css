@@ -1,0 +1,50 @@
+.App {
+    text-align: center;
+    margin: 0;
+    padding: 4px;
+}
+
+.App-logo {
+    height: 40vmin;
+}
+
+.App-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    background-image: url("https://www.zastavki.com/pictures/640x480/20203D-graphics_Big_bright_neon_circle_139454_29.jpg");
+    margin: 0;
+    padding: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+.avatar{
+    margin: 1px;
+    background-color: transparent;
+}

@@ -29,7 +29,7 @@ services:
   sample:
     container_name: frontend
     build:
-      context: ./src/main/frontend
+      context: frontend
       dockerfile: Dockerfile
     ports:
       - 3001:3000
