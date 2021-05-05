@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import { Button } from '@material-ui/core';
 import axios from 'axios';
-import {Link, Redirect, withRouter} from "react-router-dom";
+import {Redirect, withRouter} from "react-router-dom";
 import * as PropTypes from "prop-types";
 
 Redirect.propTypes = {to: PropTypes.string};
@@ -28,16 +27,9 @@ class DeleteReview extends Component{
     }
 
     render() {
-        if (this.state.status === 1) {
             return (
                 <Redirect to={'/Review'}/>
             );
-        }
-        return (
-            <div>Deletion complete
-                <br/><Button component={Link} to="/Review" variant="contained" color="primary" >Review's Table</Button>
-            </div>
-        );
     }
 }
 export default withRouter(DeleteReview);

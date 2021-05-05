@@ -46,7 +46,7 @@ class CreateUser extends Component{
             <main>
                 <div>
                     <form onSubmit={this.onSubmit}>
-                        <TextField id="email" type="text" value={email} placeholder={"Email"} onChange={this.onChange}/><br/>
+                        <TextField id="email" type="email" value={email} placeholder={"Email"} onChange={this.onChange}/><br/>
                         <TextField id="username" type="text" value={username} placeholder={"User Name"} onChange={this.onChange}/><br/>
                         <TextField id="password" type="password" value={password} placeholder={"Password"} onChange={this.onChange}/><br/>
 

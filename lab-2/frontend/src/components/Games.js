@@ -1,9 +1,12 @@
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import axios from "axios";
 import {Link, withRouter} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import {Avatar} from "@material-ui/core";
 
+const style={
+
+}
 export class Games extends Component{
 
     constructor(props) {
@@ -17,6 +20,10 @@ export class Games extends Component{
         axios.get('http://localhost:8082/games')
             .then((response => {this.setState({rows: response.data.data});}))
             .catch((error) => {console.log(error); this.setState({ message: error.message })});
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.componentDidMount();
     }
 
     render() {
@@ -55,6 +62,13 @@ export class Games extends Component{
                             </tbody>
                         ))}
                     </table>
+{/*                    <table>
+                        {this.state.rows && this.state.rows.map(game =>(
+                            <tr>
+                                <th rowSpan={10}><Button component={Link} to={'/games/' + game.id} target="_blanck"><img alt={game.name} src={game.linkMainImage}/></Button></th>
+                            </tr>
+                        ))}
+                    </table>*/}
                 </div>
             </main>
         );

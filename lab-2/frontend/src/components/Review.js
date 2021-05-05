@@ -17,6 +17,10 @@ class Review extends Component{
             .catch((error) => {console.log(error); this.setState({ message: error.message })});
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.componentDidMount();
+    }
+
     render() {
         return (
             <main role="main" className="container">
