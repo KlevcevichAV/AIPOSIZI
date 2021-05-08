@@ -10,8 +10,7 @@ class Login extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            email: "",
-            username: "",
+            usernameOrEmail: "",
             password: ""
         }
     }
@@ -21,34 +20,34 @@ class Login extends Component{
     }
 
     onSubmit = (event) => {
-        let {email, username, password} = this.state;
+        let {usernameOrEmail, password} = this.state;
         event.preventDefault();
-        if(email === '' || username === '' || password === ''){
+        if(usernameOrEmail === '' || password === ''){
             alert('Enter all Fields');
         }
         else {
-            axios.post('http://localhost:8082/users/create', JSON.stringify({
-                'email': email,
-                'username': username,
+            axios.post('http://localhost:8082/signin', JSON.stringify({
+                'usernameOrEmail': usernameOrEmail,
                 'password': password,
             }), axiosPOSTconfig)
                 .then((response) => {
                     this.setState({status: response.data.status});
                     alert('Creating completed');
+                    console.log(response.data);
                 })
                 .catch((error) => {console.log(error)});
         }
     }
 
     render() {
-        let {username, password} = this.state;
+        let {usernameOrEmail, password} = this.state;
         return(
             <main>
                 <div>
                     <form onSubmit={this.onSubmit}>
                         <h1>Login</h1>
                         <div>
-                            <Input id="username" type="text" value={username} placeholder={"User Name"} onChange={this.onChange}/>
+                            <Input id="usernameOrEmail" type="text" value={usernameOrEmail} placeholder={"User Name or Email"} onChange={this.onChange}/>
                         </div>
 
                         <div>

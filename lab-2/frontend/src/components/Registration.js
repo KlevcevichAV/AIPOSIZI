@@ -34,7 +34,7 @@ class Registration extends Component{
         }
         else {
             if( password === reppassword ){
-                axios.post('http://localhost:8082/users/create', JSON.stringify({
+                axios.post('http://localhost:8082/signup', JSON.stringify({
                     'email': email,
                     'username': username,
                     'password': password,
