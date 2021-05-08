@@ -20,25 +20,25 @@ class Login extends Component{
         this.setState({[event.target.id]: event.target.value});
     }
 
-    /*    onSubmit = (event) => {
-            let {email, username, password} = this.state;
-            event.preventDefault();
-            if(email === '' || username === '' || password === ''){
-                alert('Enter all Fields');
-            }
-            else {
-                axios.post('http://localhost:8082/users/create', JSON.stringify({
-                    'email': email,
-                    'username': username,
-                    'password': password,
-                }), axiosPOSTconfig)
-                    .then((response) => {
-                        this.setState({status: response.data.status});
-                        alert('Creating completed');
-                    })
-                    .catch((error) => {console.log(error)});
-            }
-        }*/
+    onSubmit = (event) => {
+        let {email, username, password} = this.state;
+        event.preventDefault();
+        if(email === '' || username === '' || password === ''){
+            alert('Enter all Fields');
+        }
+        else {
+            axios.post('http://localhost:8082/users/create', JSON.stringify({
+                'email': email,
+                'username': username,
+                'password': password,
+            }), axiosPOSTconfig)
+                .then((response) => {
+                    this.setState({status: response.data.status});
+                    alert('Creating completed');
+                })
+                .catch((error) => {console.log(error)});
+        }
+    }
 
     render() {
         let {username, password} = this.state;
