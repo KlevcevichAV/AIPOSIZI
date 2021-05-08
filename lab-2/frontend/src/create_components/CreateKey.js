@@ -34,7 +34,9 @@ class CreateKey extends Component{
                     this.setState({status: response.data.status});
                     alert('Creating completed');
                 })
-                .catch((error) => {console.log(error)});
+                .catch((response) => {
+                    console.log(response.response) || alert(response.response.data.detailMessage)
+                });
         }
     }
 

@@ -1,6 +1,6 @@
 package com.iit.lab2.persist.response;
 
-import com.iit.lab2.persist.entity.User;
+import com.iit.lab2.persist.entity.user.User;
 
 import java.time.LocalDate;
 

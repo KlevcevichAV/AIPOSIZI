@@ -1,6 +1,6 @@
 package com.iit.lab2.persist.request;
 
-import com.iit.lab2.persist.entity.User;
+import com.iit.lab2.persist.entity.user.User;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;

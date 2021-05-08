@@ -38,7 +38,9 @@ class UpdateUser extends Component{
                     alert('Update Completed');
                     this.setState({status: response.data.status});
                 })
-                .catch((error) => {console.log(error)});
+                .catch((response) => {
+                    console.log(response.response) || alert(response.response.data.detailMessage)
+                });
         }
 
     }

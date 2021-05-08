@@ -1,5 +1,7 @@
 package com.iit.lab2.persist.entity;
 
+import com.iit.lab2.persist.entity.user.User;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -62,4 +64,5 @@ public class Review {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
 }

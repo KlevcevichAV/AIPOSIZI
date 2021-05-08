@@ -35,10 +35,13 @@ class CreateGame extends Component{
                 'date': date,
             }), axiosPOSTconfig)
                 .then((response) => {
+                    console.log(response)
                     this.setState({status: response.data.status});
                     alert('Creating completed');
                 })
-                .catch((error) => {console.log(error) || alert(error)});
+                .catch((response) => {
+                    console.log(response.response) || alert(response.response.data.detailMessage)
+                });
         }
     }
 
